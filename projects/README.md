@@ -42,7 +42,7 @@
 
 ### 4.1、创建Conda环境
 ```bash
-conda create -n easyrl python=3.7
+conda create -n easyrl python=3.8
 conda activate easyrl # 激活环境
 ```
 ### 4.2、安装Torch
