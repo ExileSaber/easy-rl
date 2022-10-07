@@ -73,7 +73,7 @@ class Main(Launcher):
                 action, value, dist = agent.sample_action(state)  # sample action
                 next_state, reward, done, _ = env.step(action)  # update env and return transitions
                 log_prob = torch.log(dist.squeeze(0)[action])
-                entropy = -np.sum(np.mean(dist.detach().numpy()) * np.log(dist.detach().numpy()))
+                entropy = -np.sum(dist.detach().numpy() * np.log(dist.detach().numpy()))
                 agent.memory.push((value,log_prob,reward))  # save transitions
                 state = next_state  # update state
                 ep_reward += reward
